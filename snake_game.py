@@ -105,15 +105,19 @@ class SnakeGame:
         self.food = Food(self)
         
         self.game_running = True
+        self.start_button.config(bg='#00FF00')  
+        self.pause_button.config(bg='#00FF00')  
         self.next_turn()
     
     def toggle_pause(self):
         self.game_running = not self.game_running
         if self.game_running:
-            self.pause_button.config(text="Pause")
+            self.pause_button.config(text="Pause", bg='#00FF00')  
+            self.start_button.config(bg='#00FF00')  
             self.next_turn()
         else:
-            self.pause_button.config(text="Resume")
+            self.pause_button.config(text="Resume", bg='#FF0000')  
+            self.start_button.config(bg='#FF0000')  
     
     def next_turn(self):
         if not self.game_running:
