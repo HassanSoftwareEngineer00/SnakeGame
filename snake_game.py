@@ -199,7 +199,37 @@ class SnakeGame:
         )
 
 
+class Snake:
+    
+    def __init__(self, game):
+        self.game = game
+        self.body_size = game.BODY_PARTS
+        self.coordinates = []
+        self.squares = []
+        
+        for i in range(0, game.BODY_PARTS):
+            self.coordinates.append([0, 0])
+        
+        for x, y in self.coordinates:
+            square = game.canvas.create_rectangle(
+                x, y, x + game.SPACE_SIZE, y + game.SPACE_SIZE,
+                fill=game.SNAKE_COLOR, tag="snake"
+            )
+            self.squares.append(square)
 
+
+class Food:
+    def __init__(self, game):
+        self.game = game   
+        x = random.randint(0, (game.GAME_WIDTH / game.SPACE_SIZE) - 1) * game.SPACE_SIZE
+        y = random.randint(0, (game.GAME_HEIGHT / game.SPACE_SIZE) - 1) * game.SPACE_SIZE
+        
+        self.coordinates = [x, y]
+        
+        game.canvas.create_oval(
+            x, y, x + game.SPACE_SIZE, y + game.SPACE_SIZE,
+            fill=game.FOOD_COLOR, tag="food"
+        )
 
 
 def main():
