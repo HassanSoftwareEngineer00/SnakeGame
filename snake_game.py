@@ -17,8 +17,8 @@ class SnakeGame:
         self.SPEED = 100
         self.SPACE_SIZE = 20
         self.BODY_PARTS = 3
-        self.SNAKE_COLOR = "#00FF00"
-        self.FOOD_COLOR = "#FF0000"
+        self.SNAKE_COLOR = "#FFC400"
+        self.FOOD_COLOR = "#AFFCEB"
         self.BACKGROUND_COLOR = "#000000"
         
         self.score = 0
